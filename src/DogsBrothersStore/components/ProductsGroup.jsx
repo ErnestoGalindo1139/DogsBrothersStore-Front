@@ -17,15 +17,12 @@ export const ProductsGroup = () => {
 
                 <div className="relative mt-8">
                     <div className="relative -mb-6 w-full overflow-x-auto pb-6">
-                        <ul role="list" className="mx-4 inline-flex space-x-8 sm:mx-6 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-x-8 lg:space-x-0">
+                        <ul role="list" className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             {
-                                productos.map( producto => (
-                                    <ProductsCard key={producto.id} producto={producto}/>
+                                productos.map((producto, index) => (
+                                <ProductsCard key={producto.id} producto={producto} showOnly={(index < 4 ? "lg" : (index < 6 ? "md" : "sm"))} />
                                 ))
                             }
-                            
-
-                        {/* <!-- More products... --> */}
                         </ul>
                     </div>
                 </div>

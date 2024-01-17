@@ -1,10 +1,10 @@
 export const productos = [
 	{
 		id: 1,
-		image: "https://m.media-amazon.com/images/I/617BJxsWiRL._AC_SX679_.jpg",
-		color: "Black",
-		name: "Acer Laptop",
-		price: "$8,999.00",
+		image: "https://m.media-amazon.com/images/I/61FZBDYwx4L.__AC_SX300_SY300_QL70_ML2_.jpg",
+		color: "Grey",
+		name: "ASAMSUNG Galaxy S23 5G",
+		price: "$13,938.69",
 		availableColors: [
 			{ colorName: "Black", colorCode: "#111827" },
 			{ colorName: "Brass", colorCode: "#fde68a" },
@@ -13,10 +13,10 @@ export const productos = [
 	},
 	{
 		id: 2,
-		image: "https://m.media-amazon.com/images/I/319ZaoJcE6L._AC_SX425_.jpg",
-		color: "Black",
-		name: "Alexa",
-		price: "$1,299.00",
+		image: "https://m.media-amazon.com/images/I/51aQ+dft2nL._AC_SY300_SX300_.jpg",
+		color: "Blue",
+		name: "Xiaomi Smartphone Poco M5s",
+		price: "$2,888.00",
 		availableColors: [
 			{ colorName: "Blue", colorCode: "#0d6efd" },
 			{ colorName: "Silver", colorCode: "#d2d3d5" },
@@ -25,10 +25,10 @@ export const productos = [
 	},
 	{
 		id: 3,
-		image: "https://m.media-amazon.com/images/I/71zGxMkideL.__AC_SX300_SY300_QL70_ML2_.jpg",
-		color: "Red",
-		name: "Ultragear Gaming Monitor 24\"",
-		price: "$3,199.00",
+		image: "https://m.media-amazon.com/images/I/81bQah4v2EL.__AC_SX300_SY300_QL70_ML2_.jpg",
+		color: "Black",
+		name: "CUBOT Celular Kingkong Power",
+		price: "$3,599.00",
 		availableColors: [
 			{ colorName: "Red", colorCode: "#dc3545" },
 			{ colorName: "Bronze", colorCode: "#cd7f32" },
@@ -37,10 +37,10 @@ export const productos = [
 	},
 	{
 		id: 4,
-		image: "https://m.media-amazon.com/images/I/61FZBDYwx4L.__AC_SX300_SY300_QL70_ML2_.jpg",
-		color: "Green",
-		name: "SAMSUNG Galaxy S23 5G",
-		price: "$13,938.69",
+		image: "https://m.media-amazon.com/images/I/81qFsAkNV0L.__AC_SX300_SY300_QL70_ML2_.jpg",
+		color: "Beige",
+		name: "motorola Moto G14",
+		price: "$4,999.00",
 		availableColors: [
 			{ colorName: "Green", colorCode: "#198754" },
 			{ colorName: "Emerald", colorCode: "#20c997" },
