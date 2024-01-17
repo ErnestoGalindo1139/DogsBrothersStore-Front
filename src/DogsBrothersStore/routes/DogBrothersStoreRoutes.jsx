@@ -5,14 +5,20 @@ import { ProductosPage } from "../pages/ProductosPage"
 
 export const DogBrothersStoreRoutes = () => {
     return (
-        <Routes>
-            <Route path="/" element={<HomePage />} />
+        <>
+            <ComplexNavbar />
+                
+            <Routes>
+                <Route path="/" element={<HomePage />} />
 
-            <Route path="nosotros" element={<NosotrosPage />} />
+                <Route path="nosotros" element={<NosotrosPage />} />
 
-            <Route path="productos" element={<ProductosPage />} />
+                <Route path="productos" element={<ProductosPage />} />
 
-            <Route path="/*" element={<Navigate to="/" />} />
-        </Routes>
+                <Route path="/*" element={<Navigate to="/" />} />
+            </Routes>
+
+            <FooterComponent />
+        </>
     )
 }
