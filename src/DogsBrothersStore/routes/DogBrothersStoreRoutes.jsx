@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import { HomePage } from "../pages/HomePage"
 import { NosotrosPage } from "../pages/NosotrosPage"
 import { ProductosPage } from "../pages/ProductosPage"
+import { ComplexNavbar, FooterComponent } from "../components"
 
 export const DogBrothersStoreRoutes = () => {
     return (

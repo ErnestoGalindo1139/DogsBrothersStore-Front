@@ -1,10 +1,10 @@
-import { ComplexNavbar } from "../components/NavbarComponent"
+import { ProductsGroup } from "../components"
 
 export const HomePage = () => {
 
     return (
         <>
-            
+            <ProductsGroup />
         </>
         
     )
