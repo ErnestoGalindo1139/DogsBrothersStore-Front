@@ -4,7 +4,7 @@ export function FooterComponent() {
     return (
         <footer className="w-full bg-white p-8">
         <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
-            <img src="https://docs.material-tailwind.com/img/logo-ct-dark.png" alt="logo-ct" className="w-10" />
+            <img src="./assets/logos/logo_large.png" alt="logo" className="w-20" />
             <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
             <li>
                 <Typography
@@ -13,7 +13,7 @@ export function FooterComponent() {
                 color="blue-gray"
                 className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
                 >
-                About Us
+                Empresa
                 </Typography>
             </li>
             <li>
@@ -23,7 +23,7 @@ export function FooterComponent() {
                 color="blue-gray"
                 className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
                 >
-                License
+                Productos
                 </Typography>
             </li>
             <li>
@@ -33,7 +33,7 @@ export function FooterComponent() {
                 color="blue-gray"
                 className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
                 >
-                Contribute
+                Devoluciones
                 </Typography>
             </li>
             <li>
@@ -43,14 +43,14 @@ export function FooterComponent() {
                 color="blue-gray"
                 className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
                 >
-                Contact Us
+                Contacto
                 </Typography>
             </li>
             </ul>
         </div>
         <hr className="my-8 border-blue-gray-50" />
         <Typography color="blue-gray" className="text-center font-normal">
-            &copy; 2023 Material Tailwind
+            &copy; 2024 Dogs Brothers Store
         </Typography>
         </footer>
     );

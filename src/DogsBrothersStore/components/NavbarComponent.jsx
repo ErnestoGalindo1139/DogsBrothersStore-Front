@@ -126,14 +126,14 @@ const navListItems = [
         to: "/productos", // Agrega la ruta correspondiente
     },
     {
-        label: "Contactos",
-        icon: CodeBracketSquareIcon,
-        to: "/contactos", // Agrega la ruta correspondiente
-    },
-    {
         label: "Devoluciones",
         icon: CodeBracketSquareIcon,
         to: "/devoluciones", // Agrega la ruta correspondiente
+    },
+    {
+        label: "Contacto",
+        icon: CodeBracketSquareIcon,
+        to: "/contacto", // Agrega la ruta correspondiente
     },
 ];
 
@@ -166,6 +166,7 @@ export function ComplexNavbar() {
     return (
         <Navbar className="max-w-full p-2">
             <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
+                <img className="w-10" src="./assets/logos/logo_large.png" alt="" />
                 <Typography
                     as="a"
                     href="#"
