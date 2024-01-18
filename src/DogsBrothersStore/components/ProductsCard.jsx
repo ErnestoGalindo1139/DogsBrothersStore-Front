@@ -31,9 +31,9 @@ export const ProductsCard = ({ producto }) => {
             >
             {availableColors.map((availableColor) => (
                 <li
-                key={availableColor.colorCode}
-                className="h-4 w-4 rounded-full border border-black border-opacity-10"
-                style={{ backgroundColor: availableColor.colorCode }}
+                    key={availableColor.colorCode}
+                    className="h-4 w-4 rounded-full border border-black border-opacity-10"
+                    style={{ backgroundColor: availableColor.colorCode }}
                 >
                 <span className="sr-only">Black</span>
                 </li>
