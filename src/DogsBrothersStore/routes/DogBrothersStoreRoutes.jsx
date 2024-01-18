@@ -3,6 +3,7 @@ import { HomePage } from "../pages/HomePage"
 import { NosotrosPage } from "../pages/NosotrosPage"
 import { ProductosPage } from "../pages/ProductosPage"
 import { ComplexNavbar, FooterComponent } from "../components"
+import { ContactoPage } from "../pages/ContactoPage"
 
 export const DogBrothersStoreRoutes = () => {
     return (
@@ -15,6 +16,8 @@ export const DogBrothersStoreRoutes = () => {
                 <Route path="nosotros" element={<NosotrosPage />} />
 
                 <Route path="productos" element={<ProductosPage />} />
+
+                <Route path="contacto" element={<ContactoPage />} />
 
                 <Route path="/*" element={<Navigate to="/" />} />
             </Routes>
