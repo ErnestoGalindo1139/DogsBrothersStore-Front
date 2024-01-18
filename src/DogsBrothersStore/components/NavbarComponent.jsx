@@ -167,14 +167,18 @@ export function ComplexNavbar() {
         <Navbar className="max-w-full p-2 navBarBg">
             <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
                 <div className="flex items-center"> {/* Contenedor izquierdo */}
-                    <img className="w-10" src="./assets/logos/logo_white.webp" alt="" />
-                    <Typography
-                        as="a"
-                        href="#"
-                        className="mr-4 ml-2 cursor-pointer py-1.5 font-medium text-white"
-                    >
-                        Dogs Brothers Store
-                    </Typography>
+                    <NavLink to="/" className="text-decoration-none">
+                        <img className="w-10" src="./assets/logos/logo_white.webp" alt="" />
+                    </NavLink>
+                    <NavLink to="/" className="text-decoration-none">
+                        <Typography
+                            as="span"
+                            variant="paragraph"
+                            className="mr-4 ml-2 cursor-pointer py-1.5 font-medium text-white"
+                        >
+                            Dogs Brothers Store
+                        </Typography>
+                    </NavLink>
                 </div>
                 <div className="hidden lg:flex flex-grow justify-center"> {/* Contenedor central */}
                     <NavList />

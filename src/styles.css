@@ -5,5 +5,7 @@
 
 .navBarBg {
     background-color: #1c1c1c;
-    border-radius: 0;
+    border: none;
+    position: sticky;
+    top: 0;
 }
