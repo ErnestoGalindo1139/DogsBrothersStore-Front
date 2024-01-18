@@ -118,22 +118,22 @@ const navListItems = [
     {
         label: "Empresa",
         icon: UserCircleIcon,
-        to: "/nosotros", // Agrega la ruta correspondiente
+        to: "/nosotros",
     },
     {
         label: "Productos",
         icon: CubeTransparentIcon,
-        to: "/productos", // Agrega la ruta correspondiente
+        to: "/productos",
     },
     {
         label: "Devoluciones",
         icon: CodeBracketSquareIcon,
-        to: "/devoluciones", // Agrega la ruta correspondiente
+        to: "/devoluciones",
     },
     {
         label: "Contacto",
         icon: CodeBracketSquareIcon,
-        to: "/contacto", // Agrega la ruta correspondiente
+        to: "/contacto",
     },
 ];
 
@@ -166,31 +166,34 @@ export function ComplexNavbar() {
     return (
         <Navbar className="max-w-full p-2">
             <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
-                <img className="w-10" src="./assets/logos/logo_large.png" alt="" />
-                <Typography
-                    as="a"
-                    href="#"
-                    className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
-                >
-                    Dogs Brothers Store
-                </Typography>
-                <div className="hidden lg:block">
+                <div className="flex items-center"> {/* Contenedor izquierdo */}
+                    <img className="w-10" src="./assets/logos/logo_large.png" alt="" />
+                    <Typography
+                        as="a"
+                        href="#"
+                        className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
+                    >
+                        Dogs Brothers Store
+                    </Typography>
+                </div>
+                <div className="hidden lg:flex flex-grow justify-center"> {/* Contenedor central */}
                     <NavList />
                 </div>
-                <IconButton
-                    size="sm"
-                    color="blue-gray"
-                    variant="text"
-                    onClick={toggleIsNavOpen}
-                    className="ml-auto mr-2 lg:hidden"
-                >
-                    <Bars2Icon className="h-6 w-6" />
-                </IconButton>
-
-                <Button size="sm" variant="text">
-                    <span>Iniciar Sesión</span>
-                </Button>
-                <ProfileMenu />
+                <div className="flex items-center space-x-4"> {/* Contenedor derecho */}
+                    <Button size="sm" variant="text">
+                        <span>Iniciar Sesión</span>
+                    </Button>
+                    <ProfileMenu />
+                    <IconButton
+                        size="sm"
+                        color="blue-gray"
+                        variant="text"
+                        onClick={toggleIsNavOpen}
+                        className="lg:hidden"
+                    >
+                        <Bars2Icon className="h-6 w-6" />
+                    </IconButton>
+                </div>
             </div>
             <Collapse open={isNavOpen} className="overflow-scroll">
                 <NavList />
