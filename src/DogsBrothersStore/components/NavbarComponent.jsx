@@ -143,8 +143,8 @@ function NavList() {
         {navListItems.map(({ label, icon, to }, key) => (
             <NavLink key={label} to={to} className="text-decoration-none">
             <MenuItem className="flex items-center gap-2 lg:rounded-full">
-                {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}
-                <span className="text-gray-900"> {label}</span>
+                {React.createElement(icon, { className: "h-[18px] w-[18px] text-white" })}{" "}
+                <span className="text-white"> {label}</span>
             </MenuItem>
             </NavLink>
         ))}
@@ -164,14 +164,14 @@ export function ComplexNavbar() {
     }, []);
 
     return (
-        <Navbar className="max-w-full p-2">
+        <Navbar className="max-w-full p-2 navBarBg">
             <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
                 <div className="flex items-center"> {/* Contenedor izquierdo */}
-                    <img className="w-10" src="./assets/logos/logo_large.png" alt="" />
+                    <img className="w-10" src="./assets/logos/logo_white.webp" alt="" />
                     <Typography
                         as="a"
                         href="#"
-                        className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
+                        className="mr-4 ml-2 cursor-pointer py-1.5 font-medium text-white"
                     >
                         Dogs Brothers Store
                     </Typography>
@@ -181,12 +181,12 @@ export function ComplexNavbar() {
                 </div>
                 <div className="flex items-center space-x-4"> {/* Contenedor derecho */}
                     <Button size="sm" variant="text">
-                        <span>Iniciar Sesión</span>
+                        <span className="text-white">Iniciar Sesión</span>
                     </Button>
                     <ProfileMenu />
                     <IconButton
                         size="sm"
-                        color="blue-gray"
+                        color="white"
                         variant="text"
                         onClick={toggleIsNavOpen}
                         className="lg:hidden"
