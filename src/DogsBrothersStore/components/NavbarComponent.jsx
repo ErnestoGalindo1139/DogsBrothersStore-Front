@@ -22,6 +22,10 @@ import {
     LifebuoyIcon,
     PowerIcon,
     Bars2Icon,
+    QuestionMarkCircleIcon,
+    DevicePhoneMobileIcon,
+    CurrencyDollarIcon,
+    ArchiveBoxArrowDownIcon
 } from "@heroicons/react/24/solid";
 
 // profile menu component
@@ -122,18 +126,23 @@ const navListItems = [
     },
     {
         label: "Productos",
-        icon: CubeTransparentIcon,
+        icon: CurrencyDollarIcon,
         to: "/productos",
     },
     {
         label: "Devoluciones",
-        icon: CodeBracketSquareIcon,
+        icon: ArchiveBoxArrowDownIcon,
         to: "/devolucion",
     },
     {
         label: "Contacto",
-        icon: CodeBracketSquareIcon,
+        icon: DevicePhoneMobileIcon,
         to: "/contacto",
+    },
+    {
+        label: "Ayuda",
+        icon: QuestionMarkCircleIcon,
+        to: "/preguntas-frecuentes",
     },
 ];
 

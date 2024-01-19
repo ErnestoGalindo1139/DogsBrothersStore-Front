@@ -1,10 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { HomePage } from "../pages/HomePage"
-import { NosotrosPage } from "../pages/NosotrosPage"
-import { ProductosPage } from "../pages/ProductosPage"
 import { ComplexNavbar, FooterComponent } from "../components"
-import { ContactoPage } from "../pages/ContactoPage"
-import DevolucionPage from "../pages/DevolucionPage"
+import { ContactoPage, DevolucionPage, HomePage, NosotrosPage, PreguntasFrecuentesPage, ProductosPage } from "../pages"
 
 export const DogBrothersStoreRoutes = () => {
     return (
@@ -21,6 +17,8 @@ export const DogBrothersStoreRoutes = () => {
                 <Route path="contacto" element={<ContactoPage />} />
 
                 <Route path="devolucion" element={<DevolucionPage />} />
+
+                <Route path="preguntas-frecuentes" element={<PreguntasFrecuentesPage />} />
 
                 <Route path="/*" element={<Navigate to="/" />} />
             </Routes>

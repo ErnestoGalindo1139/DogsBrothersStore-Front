@@ -1,6 +1,6 @@
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 
-export default function DevolucionPage() {
+export function DevolucionPage() {
   return (
     <>
 
