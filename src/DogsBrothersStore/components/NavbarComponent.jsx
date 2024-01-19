@@ -175,7 +175,7 @@ export function ComplexNavbar() {
     }, []);
 
     return (
-        <Navbar className="max-w-full p-2 navBarBg z-[100]">
+        <Navbar className="max-w-full p-2 navBarBg sticky top-0 z-[100]">
             <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
                 <div className="flex items-center"> {/* Contenedor izquierdo */}
                     <NavLink to="/" className="text-decoration-none">
