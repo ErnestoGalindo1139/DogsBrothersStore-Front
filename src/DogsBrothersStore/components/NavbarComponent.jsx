@@ -137,17 +137,28 @@ const navListItems = [
     },
 ];
 
-function NavList() {
+const scrollToTop = (e) => {
+    window.scrollTo({ top: 0 });
+    if (e.target.classList.contains('focus:bg-blue-gray-50')) {
+        e.target.classList.remove('focus:bg-blue-gray-50');
+    }
+};
+
+function NavList({ cerrarMenu = () => {} }) {
+
     return (
         <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-        {navListItems.map(({ label, icon, to }, key) => (
-            <NavLink key={label} to={to} className="text-decoration-none">
-            <MenuItem className="flex items-center gap-2 lg:rounded-full">
-                {React.createElement(icon, { className: "h-[18px] w-[18px] text-white" })}{" "}
-                <span className="text-white"> {label}</span>
-            </MenuItem>
-            </NavLink>
-        ))}
+        {
+            navListItems.map(({ label, icon, to }, key) => (
+            
+                <NavLink key={label} to={to} className="text-decoration-none" onClick={ (e) => {scrollToTop(e), cerrarMenu()} }>
+                    <MenuItem className="flex items-center gap-2 lg:rounded-full">
+                        {React.createElement(icon, { className: "h-[18px] w-[18px] text-white" })}{" "}
+                        <span className="text-white"> {label}</span>
+                    </MenuItem>
+                </NavLink>
+            ))
+        }
         </ul>
     );
 }
@@ -164,13 +175,13 @@ export function ComplexNavbar() {
     }, []);
 
     return (
-        <Navbar className="max-w-full p-2 navBarBg">
+        <Navbar className="max-w-full p-2 navBarBg z-[100]">
             <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
                 <div className="flex items-center"> {/* Contenedor izquierdo */}
                     <NavLink to="/" className="text-decoration-none">
                         <img className="w-10" src="./assets/logos/logo_white.webp" alt="" />
                     </NavLink>
-                    <NavLink to="/" className="text-decoration-none">
+                    <NavLink to="/" className="text-decoration-none" onClick={ scrollToTop }>
                         <Typography
                             as="span"
                             variant="paragraph"
@@ -192,15 +203,15 @@ export function ComplexNavbar() {
                         size="sm"
                         color="white"
                         variant="text"
-                        onClick={toggleIsNavOpen}
+                        onClick={ toggleIsNavOpen }
                         className="lg:hidden"
                     >
                         <Bars2Icon className="h-6 w-6" />
                     </IconButton>
                 </div>
             </div>
-            <Collapse open={isNavOpen} className="overflow-scroll">
-                <NavList />
+            <Collapse open = { isNavOpen } >
+                <NavList cerrarMenu = { toggleIsNavOpen }/>
             </Collapse>
         </Navbar>
     );
