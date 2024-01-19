@@ -17,6 +17,21 @@ input[type=number] { -moz-appearance:textfield; }
     border: 0px;
 }
 
+.formDevolucion {
+    padding: 2em;
+    border-radius: 0 0 1em 1em;
+    border: 1px solid rgb(128, 128, 128);
+    border-top: 0;
+}
+
+.formDevolucionHeader {
+    background-color: rgba(42, 63, 98, 0.882);
+    padding: 2em;
+    border-radius: 1em 1em 0 0;
+    border: 1px solid grey;
+    border-bottom: 0;
+}
+
 .formDevolucion input,
 .formDevolucion textarea {
     padding-left: .5em;

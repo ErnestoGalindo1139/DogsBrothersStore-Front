@@ -26,7 +26,7 @@ export const ContactoPage = () => {
         <>
             <Typography 
                 variant="h1"
-                className="text-center mt-14/"
+                className="text-center mt-14"
             >
                 Contactanos
             </Typography>
