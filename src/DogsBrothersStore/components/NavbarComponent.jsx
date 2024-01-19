@@ -128,7 +128,7 @@ const navListItems = [
     {
         label: "Devoluciones",
         icon: CodeBracketSquareIcon,
-        to: "/devoluciones",
+        to: "/devolucion",
     },
     {
         label: "Contacto",
