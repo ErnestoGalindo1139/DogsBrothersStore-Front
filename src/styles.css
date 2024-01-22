@@ -36,3 +36,19 @@ input[type=number] { -moz-appearance:textfield; }
 .formDevolucion textarea {
     padding-left: .5em;
 }
+
+.productosSeccion {
+    width: min(80em, 100%);
+    margin: 4em auto;
+}
+
+.categoriasHeader {
+    background-color: rgb(37, 39, 44);
+    border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.categorias {
+    background-color: bisque;
+    width: 20rem;
+}
+
