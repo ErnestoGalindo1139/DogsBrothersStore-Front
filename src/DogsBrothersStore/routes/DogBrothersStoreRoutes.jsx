@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { ComplexNavbar, FooterComponent } from "../components"
-import { ContactoPage, DevolucionPage, HomePage, NosotrosPage, PreguntasFrecuentesPage, ProductosPage } from "../pages"
+import { ContactoPage, DevolucionPage, HomePage, NosotrosPage, PreguntasFrecuentesPage, ProductosPage, LoginPage } from "../pages"
 
 export const DogBrothersStoreRoutes = () => {
     return (
@@ -19,6 +19,8 @@ export const DogBrothersStoreRoutes = () => {
                 <Route path="devolucion" element={<DevolucionPage />} />
 
                 <Route path="preguntas-frecuentes" element={<PreguntasFrecuentesPage />} />
+
+                <Route path="login" element={<LoginPage />} />
 
                 <Route path="/*" element={<Navigate to="/" />} />
             </Routes>

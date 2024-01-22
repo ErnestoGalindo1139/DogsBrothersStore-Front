@@ -190,7 +190,7 @@ export function ComplexNavbar() {
                     <NavLink to="/" className="text-decoration-none">
                         <img className="w-10" src="./assets/logos/logo_white.webp" alt="" />
                     </NavLink>
-                    <NavLink to="/" className="text-decoration-none" onClick={ scrollToTop }>
+                    <NavLink to="/" className="text-decoration-none hidden sm:block" onClick={ scrollToTop }>
                         <Typography
                             as="span"
                             variant="paragraph"
@@ -204,9 +204,11 @@ export function ComplexNavbar() {
                     <NavList />
                 </div>
                 <div className="flex items-center space-x-4"> {/* Contenedor derecho */}
-                    <Button size="sm" variant="text">
-                        <span className="text-white">Iniciar Sesión</span>
-                    </Button>
+                    <NavLink to="login" className="text-decoration-none" >
+                        <Button size="sm" variant="text">
+                            <span className="text-white">Iniciar Sesión</span>
+                        </Button>
+                    </NavLink>
                     <ProfileMenu />
                     <IconButton
                         size="sm"
