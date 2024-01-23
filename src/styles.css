@@ -36,3 +36,15 @@ input[type=number] { -moz-appearance:textfield; }
 .formDevolucion textarea {
     padding-left: .5em;
 }
+
+
+/* Input File */
+.input-file {
+    /* position: absolute; */
+    width: 0px;
+    padding: 0.4rem 0 0.4rem 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
