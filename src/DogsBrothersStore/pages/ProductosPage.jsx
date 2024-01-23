@@ -1,6 +1,15 @@
+import CategoriasProductos from "../components/CategoriasProductos"
+import { ProductosCatalogo } from "../components/ProductosCatalogo"
 
 export const ProductosPage = () => {
     return (
-        <div>ProductosPage</div>
+        <>
+            <div className="productosSeccion flex justify-between">
+                {/* <div className="categorias"></div> */}
+                <CategoriasProductos />
+                <ProductosCatalogo />
+
+            </div>
+        </>
     )
 }
