@@ -21,7 +21,7 @@ export const ProductsCardCatalogo = ({ producto }) => {
                     <p className="mt-1 text-gray-900">${precio_producto}</p>
                 </div>
                 
-                    <p className="mt-2 text-white bg-green-200 pl-2 pr-2 pt-0.5 pb-0.5 w-40 font-bold">✔ Con Existencia</p>
+                    <p className="mt-2 text-white bg-green-700 pl-2 pr-2 pt-0.5 pb-0.5 w-40 font-bold rounded-md">✔ Con Existencia</p>
             </div>
             
         </li>
