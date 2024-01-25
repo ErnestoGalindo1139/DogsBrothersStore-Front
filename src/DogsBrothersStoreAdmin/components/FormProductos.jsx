@@ -1,115 +1,21 @@
 import { PhotoIcon } from "@heroicons/react/24/solid"
-import { useForm } from "../../hooks"
-import { useEffect, useState } from "react";
-import { obtenerProducto } from "../../helpers";
+import { useProductosForm } from "../hooks";
 
 export const FormProductos = ({ modoEdicion, idProducto }) => {
-    const { formState, setFormState, nombre_producto, precio_producto, cantidad_producto, descripcion_producto, id_categoria, onInputChange, onResetForm } = useForm({
-        nombre_producto: '',
-        precio_producto: '',
-        cantidad_producto: '',
-        descripcion_producto: '',
-        url_producto: '',
-        id_categoria: '',
-    });
-    const [url_Imagen, setUrl_Imagen] = useState("");
-
-    useEffect(() => {
-        onObtenerDetallesProducto();
-    }, [modoEdicion, idProducto]);
-
-    const onSubirImagen = async (e) => {
-
-        if (url_Imagen) {
-            setUrl_Imagen("");
-        }
-
-        const file = e.target.files[0];
-        const data = new FormData();
-        const cloudName = 'dd5nsh5uu';
-
-        data.append('file', file);
-        data.append('upload_preset', 'reactjs');
-
-        const respuesta = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-            method: 'POST',
-            body: data
-        });
-        const resultado = await respuesta.json();
-        setUrl_Imagen(resultado.secure_url);
-        setFormState({
-            ...formState,
-            url_producto: resultado.secure_url,
-        })
-
-    }
-
-    const onEliminarImagen = () => {
-        setUrl_Imagen("");
-    }
-
-    const onAgregarProducto = async (e) => {
-        e.preventDefault();
-        onResetForm();
-        onEliminarImagen();
-
-        try {
-
-            const url = 'http://localhost:4000/products';
-
-            if (modoEdicion) {
-                try {
-
-                    await fetch(`${url}/${idProducto}`, {
-                        method: 'PUT',
-                        body: JSON.stringify(formState),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    });
-
-                    // window.location.href = 'admin.html';
-                } catch (error) {
-                    console.log(error);
-                }
-
-            } else {
-                    
-                // Enviar Datos al servidor - POST
-                await fetch(url, {
-                    method: 'POST',
-                    body: JSON.stringify( formState ),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    const onObtenerDetallesProducto = async () => {
-        try {
-            if (modoEdicion) {
-                const producto = await obtenerProducto(idProducto);
-                // Configurar los estados con los detalles del producto
-                setFormState({
-                    nombre_producto: producto.nombre_producto,
-                    precio_producto: producto.precio_producto,
-                    cantidad_producto: producto.cantidad_producto,
-                    descripcion_producto: producto.descripcion_producto,
-                    url_producto: producto.url_producto,
-                    id_categoria: producto.id_categoria,
-                });
-                // Configurar el estado para la imagen
-                setUrl_Imagen(producto.url_producto);
-            }
-        } catch (error) {
-            console.error("Error al obtener detalles del producto:", error);
-        }
-    }
+    
+    const {
+        nombre_producto,
+        precio_producto,
+        cantidad_producto,
+        descripcion_producto,
+        id_categoria,
+        onInputChange,
+        url_Imagen,
+        categorias,
+        onSubirImagen,
+        onEliminarImagen,
+        onAgregarProducto,
+    } = useProductosForm(modoEdicion, idProducto);
 
     return (
         <div className=" bg-white w-full lg:w-full transition-all duration-200 ease-in-out">
@@ -192,7 +98,7 @@ export const FormProductos = ({ modoEdicion, idProducto }) => {
                                     value={ descripcion_producto }
                                     onChange={ onInputChange }
                                     rows="4" 
-                                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-blue-500 ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6">
                                 </textarea>
                             </div>
                         </div>
@@ -249,7 +155,7 @@ export const FormProductos = ({ modoEdicion, idProducto }) => {
                             )}
                         </div>
                         
-                        <div className="sm:col-span-3">
+                        <div className="sm:col-span-2">
                             <label 
                                 htmlFor="id_categoria" 
                                 className="block text-sm font-semibold leading-6 text-black">Categoría
@@ -258,13 +164,16 @@ export const FormProductos = ({ modoEdicion, idProducto }) => {
                                 <select
                                     id="id_categoria"
                                     name="id_categoria"
-                                    value={ id_categoria }
+                                    value={ !id_categoria ? 0 : id_categoria }
                                     onChange={ onInputChange }
                                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset shadow-blue-500 ring-blue-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6"
                                 >
-                                    <option value="" disabled selected>--Selecciona una opción--</option>
-                                    <option value="1">Laptops</option>
-                                    <option value="2">Celulares</option>
+                                    <option value="0" disabled>--Selecciona una opción--</option>
+                                    {
+                                        categorias.map( categoria => (
+                                            <option key={categoria.id_categoria} value={categoria.id_categoria}>{categoria.nombre_categoria}</option>
+                                        ))
+                                    }
                                 </select>
                             </div>
                         </div>
