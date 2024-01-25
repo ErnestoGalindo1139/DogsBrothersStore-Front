@@ -12,13 +12,13 @@ export const ProductsCardCatalogo = ({ producto }) => {
                         className="group-hover:opacity-75 imgCatalogo"
                     />
                 </div>
-                <div className="mt-6 relative">
+                <div className="mt-6 relative text-justify">
                     <h3 className="mt-1 font-semibold text-gray-900 hover:text-blue-600">
                     <a href="#" className="">
                         {`${nombre_producto} / ${descripcion_producto}`}
                     </a>
                     </h3>
-                    <p className="mt-1 text-gray-900">${precio_producto}</p>
+                    <p className="mt-1 text-blue-900 font-bold">${precio_producto}</p>
                 </div>
                 
                     <p className="mt-2 text-white bg-green-700 pl-2 pr-2 pt-0.5 pb-0.5 w-40 font-bold rounded-md">✔ Con Existencia</p>

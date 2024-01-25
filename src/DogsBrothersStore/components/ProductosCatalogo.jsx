@@ -20,12 +20,12 @@ export const ProductosCatalogo = () => {
     
 
     return (
-        <div className="bg-white ml-14">
+        <div className="bg-white ml-14 mr-14 md:mr-14">
             <div className="my-10 lg:mx-auto">
 
                 <div className="relative mt-8">
                     <div className="relative -mb-6 w-full overflow-x-auto pb-6">
-                        <ul role="list" className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+                        <ul role="list" className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
                             {
                                 productos.map((producto) => (
                                     <ProductsCardCatalogo key={producto.id_producto} producto={producto} />
