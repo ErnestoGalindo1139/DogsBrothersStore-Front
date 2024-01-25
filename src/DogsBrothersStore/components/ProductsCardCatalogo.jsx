@@ -1,5 +1,4 @@
 export const ProductsCardCatalogo = ({ producto }) => {
-    console.log(producto);
     const { nombre_producto, precio_producto, url_producto, descripcion_producto } = producto;
 
     return (
@@ -18,7 +17,7 @@ export const ProductsCardCatalogo = ({ producto }) => {
                         {`${nombre_producto} / ${descripcion_producto}`}
                     </a>
                     </h3>
-                    <p className="mt-1 text-blue-900 font-bold">${precio_producto}</p>
+                    <p className="mt-3 text-blue-900 font-bold">${precio_producto}</p>
                 </div>
                 
                     <p className="mt-2 text-white bg-green-700 pl-2 pr-2 pt-0.5 pb-0.5 w-40 font-bold rounded-md">✔ Con Existencia</p>

@@ -16,9 +16,6 @@ export const ProductosCatalogo = () => {
 
     }, [])
 
-    console.log(productos);
-    
-
     return (
         <div className="bg-white ml-14 mr-14 md:mr-14">
             <div className="my-10 lg:mx-auto">
