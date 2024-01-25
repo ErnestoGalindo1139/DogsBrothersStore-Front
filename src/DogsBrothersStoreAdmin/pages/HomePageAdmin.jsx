@@ -1,27 +1,9 @@
-import { useEffect, useState } from "react"
-import { obtenerProductos, eliminarProducto } from "../../helpers"
 import { NavLink } from "react-router-dom";
+import { useHomePage } from "../hooks";
 
 export const HomePageAdmin = () => {
 
-    const [productos, setProductos] = useState([]);
-
-    const getProducts = async () => {
-        const productos = await obtenerProductos();
-        setProductos(productos);
-    }
-    
-    useEffect(() => {
-        getProducts()
-    }, [])
-
-    const onEliminarProducto = async (e, id) => {
-        e.preventDefault();
-
-        const productoEliminado = await eliminarProducto(id);
-        getProducts();
-    }
-    
+    const { onEliminarProducto, productos } = useHomePage();
 
     return (
         // <!-- component -->
