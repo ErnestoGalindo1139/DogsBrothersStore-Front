@@ -1,26 +1,38 @@
 import { useEffect, useState } from "react";
-import { eliminarProducto, obtenerProductos } from "../../helpers";
+import { eliminarProducto, obtenerProductos, obtenerProductosActivos, obtenerProductosInactivos } from "../../helpers";
 
 export const useHomePage = () => {
     const [productos, setProductos] = useState([]);
 
-    const getProducts = async () => {
+    const getAllProducts = async () => {
         const productos = await obtenerProductos();
+        setProductos(productos);
+    };
+
+    const getActiveProducts = async () => {
+        const productos = await obtenerProductosActivos();
+        setProductos(productos);
+    };
+
+    const getInactiveProducts = async () => {
+        const productos = await obtenerProductosInactivos();
         setProductos(productos);
     };
     
     const onEliminarProducto = async (id) => {
         const productoEliminado = await eliminarProducto(id);
-        getProducts();
+        getAllProducts();
     };
 
     useEffect(() => {
-        getProducts();
+        getAllProducts();
     }, []);
 
     return {
         productos,
-        getProducts,
+        getAllProducts,
+        getActiveProducts,
+        getInactiveProducts,
         onEliminarProducto
     };
 };

@@ -29,6 +29,15 @@ export const NavbarAdmin = () => {
         })
 
     }
+
+    function highlightSidebarItem(e) {
+        const btnAdmin = document.querySelector('#btnAdmin');
+        const btnProductos = document.querySelector('#btnProductos');
+        btnAdmin.classList.add('bg-gradient-to-r', 'from-cyan-400', 'to-cyan-500','ml-0');
+        btnAdmin.firstChild.nextSibling.classList.add('text-white');
+        btnProductos.classList.remove('bg-gradient-to-r', 'from-cyan-400', 'to-cyan-500','ml-0');
+        btnProductos.firstChild.nextSibling.classList.remove('text-white');
+    }
     
     return (
         <nav className="bg-white border-b border-gray-300 py-3">
@@ -39,7 +48,7 @@ export const NavbarAdmin = () => {
                 </button>
                 {/* <!-- Logo (centrado) --> */}
                 <NavLink to="/admin" className="text-decoration-none" >
-                    <div className="sm:ml-20" id="logo">
+                    <div className="sm:ml-20" id="logo" onClick={ highlightSidebarItem }>
                         <img src="/assets/logos/logo_black.png" alt="logo" className="h-16 w-16" />
                     </div>
                 </NavLink>
