@@ -5,3 +5,4 @@ export * from './FooterComponent';
 export * from './Carrusel';
 export * from './Mapa';
 export * from './Rating';
+export * from './MostrarAlerta';
