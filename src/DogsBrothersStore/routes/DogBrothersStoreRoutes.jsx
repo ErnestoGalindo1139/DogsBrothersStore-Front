@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import { ComplexNavbar, FooterComponent } from "../components"
 import { ContactoPage, DevolucionPage, HomePage, NosotrosPage, PreguntasFrecuentesPage, ProductosPage, LoginPage } from "../pages"
 import { HomePageAdmin } from "../../DogsBrothersStoreAdmin/pages"
+import { ProductoInfoPage } from "../pages/ProductoInfoPage"
 
 export const DogBrothersStoreRoutes = () => {
     return (
@@ -14,6 +15,8 @@ export const DogBrothersStoreRoutes = () => {
                 <Route path="nosotros" element={<NosotrosPage />} />
 
                 <Route path="productos" element={<ProductosPage />} />
+                
+                <Route path="producto/:id" element={<ProductoInfoPage />} />
 
                 <Route path="contacto" element={<ContactoPage />} />
 

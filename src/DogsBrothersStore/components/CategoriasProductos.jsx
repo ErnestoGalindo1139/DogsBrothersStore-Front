@@ -135,7 +135,7 @@ export default function CategoriasProductos() {
                 </Transition>
               </Menu>
 
-              <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7" onClick={mostrarCategorias}>
+              <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7 lg:hidden" onClick={mostrarCategorias}>
                 <Bars3Icon className="h-6 w-6"/>
               </button>
             </div>

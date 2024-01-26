@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 export const ProductsCardCatalogo = ({ producto }) => {
-    const { nombre_producto, precio_producto, url_producto, descripcion_producto } = producto;
+    const { id_producto, nombre_producto, precio_producto, url_producto, descripcion_producto } = producto;
 
     return (
         <li className="w-64 text-center lg:w-auto cardCatalogo">
@@ -13,8 +15,10 @@ export const ProductsCardCatalogo = ({ producto }) => {
                 </div>
                 <div className="mt-6 relative text-justify">
                     <h3 className="mt-1 font-semibold text-gray-900 hover:text-blue-600">
-                    <a href="#" className="">
+                    <Link to={`/producto/${id_producto}`}>
                         {`${nombre_producto} / ${descripcion_producto}`}
+                    </Link>
+                    <a href="#" className="">
                     </a>
                     </h3>
                     <p className="mt-3 text-blue-900 font-bold">${precio_producto}</p>
