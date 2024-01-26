@@ -87,3 +87,9 @@ input[type=number] { -moz-appearance:textfield; }
     width: 280px;
     height: 280px;
 }
+
+/* ProductoPage */
+.imagenProductoPage {
+    width: 600px;
+    height: 600px;
+}
