@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import { obtenerProducto } from "../../helpers"
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { useForm } from "../../hooks/useForm";
+import { useNavigate } from "react-router-dom";
+import { Alert } from "@material-tailwind/react";
 
 export const CarritoComprasPage = () => {
+
+    const navigate = useNavigate();
 
     const [productoInfo, setProductoInfo] = useState({});
     const [cantidadProducto, setCantidadProducto] = useState(1);
@@ -15,11 +19,12 @@ export const CarritoComprasPage = () => {
     console.log(idProducto);
 
     const obtenerProductoInfo = async () => {
+        if(!!idProducto == false) return;
         const productoInfo = await obtenerProducto(idProducto);
         setProductoInfo(productoInfo);
     }
 
-    const { nombre_producto, precio_producto, url_producto, descripcion_producto, cantidad_producto } = productoInfo;
+    const { id_producto, nombre_producto, precio_producto, url_producto, descripcion_producto, cantidad_producto } = productoInfo;
 
     const decrementarCantidad = () => {
         if(cantidadProducto == 1) return;
@@ -28,8 +33,14 @@ export const CarritoComprasPage = () => {
     
     const aumentarCantidad = () => {
         if(cantidadProducto == cantidad_producto) return;
-        console.log(cantidad);
+        // console.log(cantidad);
         setCantidadProducto(cantidadProducto + 1);
+    }
+
+    const onDeleteProducto = () => {
+        const borrar = document.querySelector('.borrarProducto');
+        borrar.parentElement.parentElement.remove();
+        localStorage.removeItem('idProducto');
     }
 
     useEffect(() => {
@@ -39,7 +50,8 @@ export const CarritoComprasPage = () => {
     return (
         <>
             <div className="w-3/4 mx-auto my-20">
-                <table className="w-full">
+                <Alert color="red" className={`${!!idProducto == true ? 'hidden' : '' }`}>No existe ningun articulo en el carrito</Alert>
+                <table className={`w-full ${!!idProducto == false ? 'hidden' : '' }`}>
                     <thead className="bg-gray-200">
                         <tr>
                             <th className="w-2/12 border border-gray-400 py-3">Imagen</th>
@@ -68,7 +80,7 @@ export const CarritoComprasPage = () => {
                             <td className="text-center border border-gray-400 text-blue-600 font-bold text-2xl">${precio_producto}</td>
                             <td className="text-center border border-gray-400 text-blue-600 font-bold text-2xl">${precio_producto}</td>
                             <td className="border border-gray-400">
-                                <TrashIcon className="w-8 mx-auto text-red-600 cursor-pointer" />
+                                <TrashIcon className="w-8 mx-auto text-red-600 cursor-pointer borrarProducto" id={id_producto} onClick={onDeleteProducto} />
                             </td>
                         </tr>
                     </tbody>
