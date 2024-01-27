@@ -27,6 +27,7 @@ import {
     CurrencyDollarIcon,
     ArchiveBoxArrowDownIcon
 } from "@heroicons/react/24/solid";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 // profile menu component
 const profileMenuItems = [
@@ -81,6 +82,14 @@ function ProfileMenu() {
                 />
                 </Button>
             </MenuHandler>
+
+            <NavLink to="carrito-de-compras" className="text-decoration-none">
+                <ShoppingCartIcon className="text-white w-8" /> 
+                {/* <span class="material-symbols-outlined text-white text-3xl">
+                    shopping_cart
+                </span> */}
+            </NavLink>
+
             <MenuList className="p-1">
                 {
                     profileMenuItems.map(({ label, icon }, key) => {

@@ -3,6 +3,7 @@ import { ComplexNavbar, FooterComponent } from "../components"
 import { ContactoPage, DevolucionPage, HomePage, NosotrosPage, PreguntasFrecuentesPage, ProductosPage, LoginPage } from "../pages"
 import { HomePageAdmin } from "../../DogsBrothersStoreAdmin/pages"
 import { ProductoInfoPage } from "../pages/ProductoInfoPage"
+import { CarritoComprasPage } from "../pages/CarritoComprasPage"
 
 export const DogBrothersStoreRoutes = () => {
     return (
@@ -23,6 +24,8 @@ export const DogBrothersStoreRoutes = () => {
                 <Route path="devolucion" element={<DevolucionPage />} />
 
                 <Route path="preguntas-frecuentes" element={<PreguntasFrecuentesPage />} />
+
+                <Route path="carrito-de-compras" element={<CarritoComprasPage />} />
 
                 <Route path="login" element={<LoginPage />} />
 

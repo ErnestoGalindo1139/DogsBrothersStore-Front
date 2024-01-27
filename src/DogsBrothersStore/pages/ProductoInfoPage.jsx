@@ -34,6 +34,10 @@ export const ProductoInfoPage = () => {
         setCantidadProducto(cantidadProducto + 1);
     }
 
+    const onAgregrarAlCarrito = () => {
+        localStorage.setItem('idProducto', id);
+    }
+
     useEffect(() => {
         obtenerProductoInfo();
 
@@ -62,7 +66,7 @@ export const ProductoInfoPage = () => {
                             </button>
                         </div>
                         
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold p-2 px-20 md:px-2 rounded-md md:ml-8 md:my-4  mx-auto md:mx-0 mb-6">
+                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold p-2 px-20 md:px-2 rounded-md md:ml-8 md:my-4  mx-auto md:mx-0 mb-6" onClick={onAgregrarAlCarrito}>
                             Agregar al carrito
                         </button>
                     </div>
