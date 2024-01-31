@@ -83,8 +83,9 @@ function ProfileMenu() {
                 </Button>
             </MenuHandler>
 
-            <NavLink to="carrito-de-compras" className="text-decoration-none">
-                <ShoppingCartIcon className="text-white w-8" /> 
+            <NavLink to="carrito-de-compras" className="text-decoration-none flex items-center text-white">
+                <span>0</span>
+                <ShoppingCartIcon className="w-8" /> 
                 {/* <span class="material-symbols-outlined text-white text-3xl">
                     shopping_cart
                 </span> */}
