@@ -1,8 +1,14 @@
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import { agregarCarritoCompras } from "../../helpers/agregarCarritoCompras";
 
 export const ProductsCardCatalogo = ({ producto }) => {
     const { id_producto, nombre_producto, precio_producto, url_producto, descripcion_producto } = producto;
+
+    const onAgregarCarrito = (id) => {
+        console.log(id);
+        agregarCarritoCompras(id);
+    }
 
     return (
         <li className="w-64 lg:w-full h-[35rem]">
@@ -24,7 +30,7 @@ export const ProductsCardCatalogo = ({ producto }) => {
                 </div>
                 
                     <p className="mt-2 text-white bg-green-700 pl-2 pr-2 pt-0.5 pb-0.5 w-40 font-bold rounded-md">✔ Con Existencia</p>
-                    <button className="text-white font-bold rounded-md mt-2 flex">
+                    <button className="text-white font-bold rounded-md mt-2 flex" onClick={() => onAgregarCarrito(id_producto)}>
                         <ShoppingCartIcon className="text-white w-8 h-9 bg-blue-500 hover:bg-blue-700 p-1.5 rounded-s" /> 
                         <p className="px-2 bg-gray-500 hover:bg-gray-600 my-auto p-1.5 rounded-e">Agregar</p>
                     </button>
